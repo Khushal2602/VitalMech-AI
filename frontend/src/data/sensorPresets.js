@@ -1,0 +1,120 @@
+// Sensor scenario presets — mirrors backend/data/fault_scenarios.json
+// Used for the scenario selector dropdown in the frontend.
+// Schema: { id, name, machine_type, symptom_description, sensors: { rpm, temperature_c, vibration_mm_s, pressure_bar, current_amps, noise_db } }
+
+const SENSOR_PRESETS = [
+  {
+    id: 'normal_operation',
+    name: 'Normal Operation',
+    machine_type: 'Centrifugal Pump',
+    symptom_description: 'Machine running within normal parameters. No anomalies detected.',
+    sensors: {
+      rpm: 1800,
+      temperature_c: 42,
+      vibration_mm_s: 1.2,
+      pressure_bar: 4.5,
+      current_amps: 18,
+      noise_db: 62,
+    },
+  },
+  {
+    id: 'bearing_failure',
+    name: 'Bearing Failure',
+    machine_type: 'Induction Motor',
+    symptom_description: 'Unusual grinding noise reported by operator. Machine running rough.',
+    sensors: {
+      rpm: 1740,
+      temperature_c: 78,
+      vibration_mm_s: 14.3,
+      pressure_bar: 4.1,
+      current_amps: 24,
+      noise_db: 89,
+    },
+  },
+  {
+    id: 'overheating',
+    name: 'Overheating',
+    machine_type: 'Air Compressor',
+    symptom_description: 'Machine tripping on thermal overload. Cooling fans running but temperature still rising.',
+    sensors: {
+      rpm: 2950,
+      temperature_c: 97,
+      vibration_mm_s: 2.1,
+      pressure_bar: 2.8,
+      current_amps: 31,
+      noise_db: 71,
+    },
+  },
+  {
+    id: 'cavitation',
+    name: 'Cavitation',
+    machine_type: 'Centrifugal Pump',
+    symptom_description: 'Crackling/rattling sound from pump casing. Flow rate dropped significantly.',
+    sensors: {
+      rpm: 1820,
+      temperature_c: 55,
+      vibration_mm_s: 6.8,
+      pressure_bar: 1.4,
+      current_amps: 22,
+      noise_db: 94,
+    },
+  },
+  {
+    id: 'shaft_misalignment',
+    name: 'Shaft Misalignment',
+    machine_type: 'Shaft/Coupling Assembly',
+    symptom_description: 'Vibration increased after maintenance. Coupling running hot.',
+    sensors: {
+      rpm: 2960,
+      temperature_c: 68,
+      vibration_mm_s: 11.7,
+      pressure_bar: 4.3,
+      current_amps: 38,
+      noise_db: 81,
+    },
+  },
+  {
+    id: 'oil_starvation',
+    name: 'Oil Starvation',
+    machine_type: 'Industrial Gearbox',
+    symptom_description: 'Oil level low warning. Temperature rising steadily over last 2 hours.',
+    sensors: {
+      rpm: 1450,
+      temperature_c: 104,
+      vibration_mm_s: 8.2,
+      pressure_bar: 3.9,
+      current_amps: 27,
+      noise_db: 86,
+    },
+  },
+  {
+    id: 'imbalance',
+    name: 'Rotor Imbalance',
+    machine_type: 'Industrial Fan / Blower',
+    symptom_description: 'Machine shaking rhythmically. Vibration frequency matches RPM.',
+    sensors: {
+      rpm: 1500,
+      temperature_c: 51,
+      vibration_mm_s: 9.5,
+      pressure_bar: 0.8,
+      current_amps: 20,
+      noise_db: 77,
+    },
+  },
+  {
+    id: 'electrical_fault',
+    name: 'Electrical Fault',
+    machine_type: 'Induction Motor',
+    symptom_description: 'Motor drawing excessive current. Tripping breaker intermittently.',
+    sensors: {
+      rpm: 1710,
+      temperature_c: 91,
+      vibration_mm_s: 3.4,
+      pressure_bar: 4.0,
+      current_amps: 48,
+      noise_db: 74,
+    },
+  },
+]
+
+export default SENSOR_PRESETS
